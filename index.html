@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IP RESULTS</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">IPResults</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> All Students</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="text-center" style="margin: auto">
+        <label for="search">Search By Roll No.</label>
+        <input type="text" class="form-control" id="search" style="width: 50%;margin: auto;" value="02896202717"> <br>
+        <button class="btn" onclick="search()">Search</button>
+    </div> <br>
+    <div id="result" class="text-center">
+
+    </div>
+
+
+
+    <script>
+        function search() {
+            var query = document.querySelector('#search') ;
+            var content = document.querySelector('#result') ;
+            console.log(query.value) ;
+            fetch('https://vast-escarpment-73783.herokuapp.com/students')
+                .then( data => data.json() )
+                .then( log => log[1684] )
+                .then( data => {
+                    var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                                <label>Name : </label> ${data.name} </div> <br>` ;
+                    content.innerHTML = html ;
+                    var table = `` ;
+                    for( key in data.results ) {
+                        table += `<p> ${data.results[key].subject}  
+                                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                     ${data.results[key].marks} </p>` ;
+                    }
+                    content.innerHTML += table ;
+                    console.log(data) ;
+                } )
+        }
+    </script>
+
+
+
+</body>
+
+</html>
