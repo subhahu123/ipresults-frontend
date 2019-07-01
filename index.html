@@ -17,6 +17,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
+    </style>
+
 
 </head>
 
@@ -46,27 +59,28 @@
 
     <script>
         function search() {
-            var query = document.querySelector('#search') ;
-            var content = document.querySelector('#result') ;
-            console.log(query.value) ;
+            var query = document.querySelector('#search');
+            var content = document.querySelector('#result');
+            content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
+            console.log(query.value);
             fetch(`https://vast-escarpment-73783.herokuapp.com/student/${query.value}`)
-                .then( data => data.json() )
-               // .then( log => log[1684] )
-                .then( data => data[0] )
-                .then( data => {
+                .then(data => data.json())
+                // .then( log => log[1684] )
+                .then(data => data[0])
+                .then(data => {
                     var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                                <label>Name : </label> ${data.name} </div> <br>` ;
-                    content.innerHTML = html ;
-                    var table = `` ;
-                    for( key in data.results ) {
+                                <label>Name : </label> ${data.name} </div> <br>`;
+                    content.innerHTML = html;
+                    var table = ``;
+                    for (key in data.results) {
                         table += `<p> ${data.results[key].subject}  
                                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                     ${data.results[key].marks} </p>` ;
+                                     ${data.results[key].marks} </p>`;
                     }
-                    content.innerHTML += table ;
-                    console.log(data) ;
-                } )
+                    content.innerHTML += table;
+                    console.log(data);
+                })
         }
     </script>
 
