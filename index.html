@@ -16,7 +16,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <link rel="icon" href="favicon.png" type="image/x-icon"/>
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
 
 
     <style>
@@ -74,7 +74,11 @@
         <input type="text" class="form-control" id="search" style="width: 50%;margin: auto;" value="02896202717"> <br>
         <button class="btn" onclick="search()">Search</button>
     </div> <br>
+
+
+
     <div id="result" class="text-center">
+
 
     </div>
 
@@ -95,15 +99,36 @@
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                 <label>Name : </label> ${data.name} </div> <br>`;
                     content.innerHTML = html;
-                    var table = ``;
+                    // var table = ``;
+
+                    var table = `<table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject</th>
+                                            <th>Marks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>`;
+
                     for (key in data.results) {
-                        table += `<p> ${data.results[key].subject}  
-                                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                     ${data.results[key].marks} </p>`;
+
+                        /* table += `<p> ${data.results[key].subject}  
+                                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                      ${data.results[key].marks} </p>`; */
+                        //////////////////////
+
+                        table += `<tr>
+                                    <td>${data.results[key].subject}</td>
+                                    <td>${data.results[key].marks}</td>
+                                  </tr>` ;
+
                     }
+                    table += `</tbody>
+                            </table>` ;
                     content.innerHTML += table;
                     console.log(data);
                 })
+                .catch(err => content.innerHTML = 'Sorry No Result');
         }
     </script>
 
