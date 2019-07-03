@@ -554,6 +554,7 @@
 
             var subjectdata = JSON.parse(subjectscodedata) ;
             console.log(subjectdata) ;
+            console.log(subjectdata[99201]) ;
             var query = document.querySelector('#search');
             var content = document.querySelector('#result');
             content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
@@ -586,11 +587,12 @@
                                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                       ${data.results[key].marks} </p>`; */
                         //////////////////////
+                        data.results[key].subject = data.results[key].subject.slice(0, 5) ;
 
                         table += `<tr>
                                     <td>${data.results[key].subject}</td>
-                                    <td>${data.results[key].subject}</td>
-                                    <td>${data.results[key].subject}</td>
+                                    <td>${subjectdata[data.results[key].subject].papercode}</td>
+                                    <td>${subjectdata[data.results[key].subject].subject}</td>
                                     <td>${data.results[key].marks}</td>
                                   </tr>` ;
 
