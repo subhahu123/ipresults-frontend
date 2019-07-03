@@ -570,6 +570,9 @@
                     content.innerHTML = html;
                     // var table = ``;
 
+                    var sum = 0 ;
+                    var total = 0 ;
+
                     var table = `<table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
@@ -590,6 +593,9 @@
                         //////////////////////
                         var paperid = data.results[key].subject.slice(0, 5) ;
 
+                        total++ ;
+                        sum += parseInt(data.results[key].marks) ;
+
                         table += `<tr>
                                     <td>${data.results[key].subject}</td>
                                     <td>${subjectdata[paperid].papercode}</td>
@@ -601,6 +607,12 @@
                     }
                     table += `</tbody>
                             </table>` ;
+
+                    console.log(sum) ;
+                    console.log(total) ;
+                    var percentage = sum / total ;
+
+                    table += `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>` ;
                     content.innerHTML += table;
                     console.log(data);
                 })
