@@ -577,6 +577,7 @@
                                             <th>Paper code</th>
                                             <th>Subject</th>
                                             <th>Marks</th>
+                                            <th>Credits</th>
                                         </tr>
                                     </thead>
                                     <tbody>`;
@@ -587,13 +588,14 @@
                                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                       ${data.results[key].marks} </p>`; */
                         //////////////////////
-                        data.results[key].subject = data.results[key].subject.slice(0, 5) ;
+                        var paperid = data.results[key].subject.slice(0, 5) ;
 
                         table += `<tr>
                                     <td>${data.results[key].subject}</td>
-                                    <td>${subjectdata[data.results[key].subject].papercode}</td>
-                                    <td>${subjectdata[data.results[key].subject].subject}</td>
+                                    <td>${subjectdata[paperid].papercode}</td>
+                                    <td>${subjectdata[paperid].subject}</td>
                                     <td>${data.results[key].marks}</td>
+                                    <td>${data.results[key].subject[6]}</td>
                                   </tr>` ;
 
                     }
