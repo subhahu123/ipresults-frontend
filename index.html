@@ -2,93 +2,109 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>IP RESULTS</title>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IP RESULTS</title>
 
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143316096-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-    <style>
-        .loader {
-            border: 16px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 16px solid #3498db;
-            width: 120px;
-            height: 120px;
-            -webkit-animation: spin 2s linear infinite;
-            /* Safari */
-            animation: spin 2s linear infinite;
-        }
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-        /* Safari */
-        @-webkit-keyframes spin {
-            0% {
-                -webkit-transform: rotate(0deg);
-            }
+    gtag('config', 'UA-143316096-1');
+  </script>
 
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
 
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+
+
+
+  <style>
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      /* Safari */
+      animation: spin 2s linear infinite;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">IPResults</a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> All Students</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="text-center" style="margin: auto">
-        <label for="search">Search By Roll No.</label>
-        <input type="text" class="form-control" id="search" style="width: 50%;margin: auto;" value="02896202717"> <br>
-        <button class="btn" onclick="search()">Search</button>
-    </div> <br>
-
-
-
-    <div id="result" class="text-center container">
-
-
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">IPResults</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> All Students</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Contact</a></li>
+      </ul>
     </div>
+  </nav>
+  <div class="text-center" style="margin: auto">
+    <label for="search">Search By Roll No.</label>
+    <input type="text" class="form-control" id="search" style="width: 50%;margin: auto;" value="02896202717"> <br>
+    <button class="btn" onclick="search()">Search</button>
+  </div> <br>
 
 
 
-    <script>
-        function search() {
+  <div id="result" class="text-center container">
 
-            var subjectscodedata = `{
+
+  </div>
+
+
+
+  <script>
+    function search() {
+
+      var subjectscodedata = `{
   "99201": {
     "papercode": "ETMA201",
     "subject": "APPLIED MATHEMATICS "
@@ -549,31 +565,31 @@
     "papercode": "ETPE255",
     "subject": "ELECTRICAL MACHINES LAB"
   }
-} ` ;
+} `;
 
 
-            var subjectdata = JSON.parse(subjectscodedata) ;
-            console.log(subjectdata) ;
-            console.log(subjectdata[99201]) ;
-            var query = document.querySelector('#search');
-            var content = document.querySelector('#result');
-            content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
-            console.log(query.value);
-            fetch(`https://vast-escarpment-73783.herokuapp.com/student/${query.value}`)
-                .then(data => data.json())
-                // .then( log => log[1684] )
-                .then(data => data[0])
-                .then(data => {
-                    var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
+      var subjectdata = JSON.parse(subjectscodedata);
+      console.log(subjectdata);
+      console.log(subjectdata[99201]);
+      var query = document.querySelector('#search');
+      var content = document.querySelector('#result');
+      content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
+      console.log(query.value);
+      fetch(`https://vast-escarpment-73783.herokuapp.com/student/${query.value}`)
+        .then(data => data.json())
+        // .then( log => log[1684] )
+        .then(data => data[0])
+        .then(data => {
+          var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                 <label>Name : </label> ${data.name} </div> <br>`;
-                    content.innerHTML = html;
-                    // var table = ``;
+          content.innerHTML = html;
+          // var table = ``;
 
-                    var sum = 0 ;
-                    var total = 0 ;
+          var sum = 0;
+          var total = 0;
 
-                    var table = `<table class="table table-striped table-hover">
+          var table = `<table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th>Paper Id</th>
@@ -585,40 +601,41 @@
                                     </thead>
                                     <tbody>`;
 
-                    for (key in data.results) {
+          for (key in data.results) {
 
-                        /* table += `<p> ${data.results[key].subject}  
-                                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                      ${data.results[key].marks} </p>`; */
-                        //////////////////////
-                        var paperid = data.results[key].subject.slice(0, 5) ;
+            /* table += `<p> ${data.results[key].subject}  
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                          ${data.results[key].marks} </p>`; */
+            //////////////////////
+            var paperid = data.results[key].subject.slice(0, 5);
 
-                        total++ ;
-                        sum += parseInt(data.results[key].marks) ;
+            total++;
+            sum += parseInt(data.results[key].marks);
 
-                        table += `<tr>
+            table += `<tr>
                                     <td>${data.results[key].subject}</td>
                                     <td>${subjectdata[paperid].papercode}</td>
                                     <td>${subjectdata[paperid].subject}</td>
                                     <td>${data.results[key].marks}</td>
                                     <td>${data.results[key].subject[6]}</td>
-                                  </tr>` ;
+                                  </tr>`;
 
-                    }
-                    table += `</tbody>
-                            </table>` ;
+          }
+          table += `</tbody>
+                            </table>`;
 
-                    console.log(sum) ;
-                    console.log(total) ;
-                    var percentage = sum / total ;
+          console.log(sum);
+          console.log(total);
+          var percentage = sum / total;
 
-                    table += `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>` ;
-                    content.innerHTML += table;
-                    console.log(data);
-                })
-                .catch(err => content.innerHTML = 'Sorry No Result');
-        }
-    </script>
+          table +=
+            `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
+          content.innerHTML += table;
+          console.log(data);
+        })
+        .catch(err => content.innerHTML = 'Sorry No Result');
+    }
+  </script>
 
 
 
