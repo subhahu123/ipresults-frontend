@@ -658,7 +658,7 @@
 
     //  xmlhttp.send(object) ;
 
-      fetch(`http://127.0.0.1:8080/email/${object.emailid}/${object.html}`)
+      fetch(`https://vast-escarpment-73783.herokuapp.com/email/${object.emailid}/${object.html}`)
         .then( data => console.log(data) )
         .catch( err => console.log(err) ) ;
 
