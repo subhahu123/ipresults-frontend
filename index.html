@@ -649,18 +649,21 @@
       var emailid = document.querySelector('#email') ;
       console.log(emailid.value) ;
       console.log(table) ;
-      var object = {} ;
-      object.emailid = emailid ;
-      object.html = table ;
+      var object = {
+        "emailid" : `${emailid.value}`,
+        "html" : `${table.toString()}`
+      } ;
+     // object.emailid = emailid.value ;
+      object.html = encodeURIComponent(table) ;
       console.log(object) ;
-    //  xmlhttp = new XMLHttpRequest();
-    //  xmlhttp.open("POST", `http://127.0.0.1:8080/email`, true);
+      xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("POST", `http://127.0.0.1:8080/email/${object.emailid}`, true);
+      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xmlhttp.send(object.html) ;
 
-    //  xmlhttp.send(object) ;
-
-      fetch(`https://vast-escarpment-73783.herokuapp.com/email/${object.emailid}/${object.html}`)
-        .then( data => console.log(data) )
-        .catch( err => console.log(err) ) ;
+      //fetch(`https://vast-escarpment-73783.herokuapp.com/email/${object.emailid}/${object.html}`)
+      //  .then( data => console.log(data) )
+      //  .catch( err => console.log(err) ) ;
 
     }
 
