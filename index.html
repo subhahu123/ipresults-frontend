@@ -102,6 +102,10 @@
 
 
   <script>
+
+
+    var table = `` ;
+
     function search() {
 
       var subjectscodedata = `{
@@ -589,7 +593,7 @@
           var sum = 0;
           var total = 0;
 
-          var table = `<table class="table table-striped table-hover">
+          table = `<table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th>Paper Id</th>
@@ -630,11 +634,39 @@
 
           table +=
             `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
+            table += `<br> <input id="email">
+                      <br> 
+                      <button class="btn" onclick="sendmail()" > send report to yourself </button>` ;
           content.innerHTML += table;
           console.log(data);
         })
         .catch(err => content.innerHTML = 'Sorry No Result');
     }
+
+
+
+    function sendmail() {
+      var emailid = document.querySelector('#email') ;
+      console.log(emailid.value) ;
+      console.log(table) ;
+      var object = {} ;
+      object.emailid = emailid ;
+      object.html = table ;
+      console.log(object) ;
+    //  xmlhttp = new XMLHttpRequest();
+    //  xmlhttp.open("POST", `http://127.0.0.1:8080/email`, true);
+
+    //  xmlhttp.send(object) ;
+
+      fetch(`http://127.0.0.1:8080/email/${object.emailid}/${object.html}`)
+        .then( data => console.log(data) )
+        .catch( err => console.log(err) ) ;
+
+    }
+
+
+
+
   </script>
 
 
