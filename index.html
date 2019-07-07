@@ -657,7 +657,7 @@
       object.html = encodeURIComponent(table) ;
       console.log(object) ;
       xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("POST", `http://127.0.0.1:8080/email/${object.emailid}`, true);
+      xmlhttp.open("POST", `http://vast-escarpment-73783.herokuapp.com/email/${object.emailid}`, true);
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xmlhttp.send(object.html) ;
 
