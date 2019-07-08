@@ -88,7 +88,11 @@
   </nav>
   <div class="text-center" style="margin: auto">
     <label for="search">Search By Roll No.</label>
+
     <input type="text" class="form-control" id="search" style="width: 50%;margin: auto;" value="02896202717"> <br>
+
+    <input type="text" class="form-control" id="semester" style="width: 10%;margin: auto;" value="3"> <br>
+    
     <button class="btn" onclick="search()">Search</button>
   </div> <br>
 
@@ -576,14 +580,23 @@
       console.log(subjectdata);
       console.log(subjectdata[99201]);
       var query = document.querySelector('#search');
-      var content = document.querySelector('#result');
+      var semester = document.querySelector('#semester') ;
+      var content = document.querySelector('#result') ;
       content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
-      console.log(query.value);
-      fetch(`https://vast-escarpment-73783.herokuapp.com/student/${query.value}`)
+      console.log(query.value) ;
+      console.log(semester.value) ;
+      // var url = `https://vast-escarpment-73783.herokuapp.com/student/${query.value}` ;
+      var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
+      console.log(url) ;
+      fetch(url)
         .then(data => data.json())
         // .then( log => log[1684] )
-        .then(data => data[0])
         .then(data => {
+                    
+                          return data[0] ;
+                    })
+        .then(data => {
+          console.log(data) ;
           var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                 <label>Name : </label> ${data.name} </div> <br>`;
@@ -613,13 +626,36 @@
             //////////////////////
             var paperid = data.results[key].subject.slice(0, 5);
 
+            console.log(paperid) ;
+            console.log(subjectdata[paperid]) ;
+
+            var papercode  ;
+            if(typeof(subjectdata[paperid]) != 'undefined') {
+              papercode = subjectdata[paperid].papercode ;
+            }
+            else {
+              papercode = "NA" ;
+            }
+              
+            var subject ;
+            if(typeof(subjectdata[paperid]) != 'undefined') {
+              subject = subjectdata[paperid].subject ;
+            }
+            else {
+              subject = "NA" ;
+            }
+
+            // console.log(subjectdata[paperid].papercode) ;
+
+           // var paperid = "99201" ;
+
             total++;
             sum += parseInt(data.results[key].marks);
 
             table += `<tr>
                                     <td>${data.results[key].subject}</td>
-                                    <td>${subjectdata[paperid].papercode}</td>
-                                    <td>${subjectdata[paperid].subject}</td>
+                                    <td>${papercode}</td>
+                                    <td>${subject}</td>
                                     <td>${data.results[key].marks}</td>
                                     <td>${data.results[key].subject[6]}</td>
                                   </tr>`;
@@ -640,7 +676,10 @@
           content.innerHTML += table;
           console.log(data);
         })
-        .catch(err => content.innerHTML = 'Sorry No Result');
+        .catch(err => {
+                        console.log(err) ;
+                        content.innerHTML = 'Sorry No Result'
+                      });
     }
 
 
