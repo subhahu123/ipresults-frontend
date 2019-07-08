@@ -109,6 +109,7 @@
 
 
     var table = `` ;
+    var content
 
     function search() {
 
@@ -581,12 +582,12 @@
       console.log(subjectdata[99201]);
       var query = document.querySelector('#search');
       var semester = document.querySelector('#semester') ;
-      var content = document.querySelector('#result') ;
+      content = document.querySelector('#result') ;
       content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
       console.log(query.value) ;
       console.log(semester.value) ;
-      // var url = `https://vast-escarpment-73783.herokuapp.com/student/${query.value}` ;
-      var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
+       var url = `https://vast-escarpment-73783.herokuapp.com/student/${semester.value}/${query.value}` ;
+      // var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
       console.log(url) ;
       fetch(url)
         .then(data => data.json())
@@ -687,13 +688,13 @@
     function sendmail() {
       var emailid = document.querySelector('#email') ;
       console.log(emailid.value) ;
-      console.log(table) ;
+      console.log(content.innerHTML) ;
       var object = {
         "emailid" : `${emailid.value}`,
-        "html" : `${table.toString()}`
+        "html" : `${content.innerHTML.toString()}`
       } ;
      // object.emailid = emailid.value ;
-      object.html = encodeURIComponent(table) ;
+      object.html = encodeURIComponent(content.innerHTML) ;
       console.log(object) ;
       xmlhttp = new XMLHttpRequest();
       xmlhttp.open("POST", `http://vast-escarpment-73783.herokuapp.com/email/${object.emailid}`, true);
