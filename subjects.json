@@ -1,159 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-
-  <meta name="description"
-    content="IPURESULTS - GGSIPU B.TECH RESULTS FOR AFFILIATED INSTITUTES,now you don't need to download result pdf and search your name in
-      them and then calculate percentages,IPURESULTS will do it all for you in a single click.Also you can know your College and University ranks
-      along with total marks and number of backlogs for all the semesters.Total number of pending backlogs is also shown.">
-
-  <meta name="keywords" content="GGSIPU,B.Tech,Results,total marks,Percentage,Contact page,contact">
-
-  <meta name="author" content="Subhahu Jain">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>IP RESULTS</title>
-
-
-
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143316096-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-143316096-1');
-  </script>
-
-
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-  <link rel="icon" href="favicon.png" type="image/x-icon" />
-
-
-
-  <style>
-    .loader {
-      border: 16px solid #f3f3f3;
-      border-radius: 50%;
-      border-top: 16px solid #3498db;
-      width: 120px;
-      height: 120px;
-      -webkit-animation: spin 2s linear infinite;
-      /* Safari */
-      animation: spin 2s linear infinite;
-    }
-
-    /* Safari */
-    @-webkit-keyframes spin {
-      0% {
-        -webkit-transform: rotate(0deg);
-      }
-
-      100% {
-        -webkit-transform: rotate(360deg);
-      }
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-
-
-</head>
-
-<body>
-
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">IPResults</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> All Students</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-
-  <div class="text-center" style="margin: auto">
-
-    <script type="text/javascript" language="javascript">
-      var aax_size = '728x90';
-      var aax_pubname = 'coderssusper1-21';
-      var aax_src = '302';
-    </script>
-    <script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
-
-    <br>
-
-
-
-
-    <label for="search">Search By Roll No.</label>
-
-    <input type="text" class="form-control" id="search" style="width: 50%;margin: auto;" value="02896202717"> <br>
-
-    <div class="form-group" style="width: 20%;margin: auto;">
-      <label for="sel1">Select Semester:</label>
-      <select class="form-control" id="semester">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-      </select>
-    </div> <br>
-
-    <button class="btn" onclick="search()">Search</button>
-  </div> <br>
-
-
-
-  <div id="result" class="text-center container">
-
-
-  </div>
-
-
-
-
-
-
-
-  <script>
-    var table = ``;
-    var content
-
-    function search() {
-
-      var subjectscodedata = `{
+{
   "99201": {
     "papercode": "ETMA201",
     "subject": "APPLIED MATHEMATICS "
@@ -614,140 +459,58 @@
     "papercode": "ETPE255",
     "subject": "ELECTRICAL MACHINES LAB"
   }
-} `;
-
-
-      var subjectdata = JSON.parse(subjectscodedata);
-      console.log(subjectdata);
-      console.log(subjectdata[99201]);
-      var query = document.querySelector('#search');
-      var semester = document.querySelector('#semester');
-      content = document.querySelector('#result');
-      content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
-      console.log(query.value);
-      console.log(semester.value);
-      var url = `https://vast-escarpment-73783.herokuapp.com/student/${semester.value}/${query.value}`;
-      // var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
-      console.log(url);
-      fetch(url)
-        .then(data => data.json())
-        // .then( log => log[1684] )
-        .then(data => {
-
-          return data[0];
-        })
-        .then(data => {
-          console.log(data);
-          var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
-                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                                <label>Name : </label> ${data.name} </div> <br>`;
-          content.innerHTML = html;
-          // var table = ``;
-
-          var sum = 0;
-          var total = 0;
-
-          table = `<table class="table table-striped table-hover table-bordered bordered table-condensed no-margin block-shadow">
-                                    <thead>
-                                        <tr>
-                                            <th style='text-align: center'>Paper Id</th>
-                                            <th style='text-align: center'>Paper code</th>
-                                            <th style='text-align: center'>Subject</th>
-                                            <th style='text-align: center'>Marks</th>
-                                            <th style='text-align: center'>Credits</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>`;
-
-          for (key in data.results) {
-
-            /* table += `<p> ${data.results[key].subject}  
-                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                          ${data.results[key].marks} </p>`; */
-            //////////////////////
-            var paperid = data.results[key].subject.slice(0, 5);
-
-            console.log(paperid);
-            console.log(subjectdata[paperid]);
-
-            var papercode;
-            if (typeof (subjectdata[paperid]) != 'undefined') {
-              papercode = subjectdata[paperid].papercode;
-            } else {
-              papercode = "NA";
-            }
-
-            var subject;
-            if (typeof (subjectdata[paperid]) != 'undefined') {
-              subject = subjectdata[paperid].subject;
-            } else {
-              subject = "NA";
-            }
-
-            // console.log(subjectdata[paperid].papercode) ;
-
-            // var paperid = "99201" ;
-
-            total++;
-            sum += parseInt(data.results[key].marks);
-
-            table += `<tr>
-                                    <td>${data.results[key].subject}</td>
-                                    <td>${papercode}</td>
-                                    <td>${subject}</td>
-                                    <td>${data.results[key].marks}</td>
-                                    <td>${data.results[key].subject[6]}</td>
-                                  </tr>`;
-
-          }
-          table += `</tbody>
-                            </table>`;
-
-          console.log(sum);
-          console.log(total);
-          var percentage = sum / total;
-
-          table +=
-            `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
-          table += `<br> <input id="email">
-                      <br> 
-                      <button class="btn" onclick="sendmail()" > send report to yourself </button>`;
-          content.innerHTML += table;
-          console.log(data);
-        })
-        .catch(err => {
-          console.log(err);
-          content.innerHTML = 'Sorry No Result'
-        });
-    }
+}
 
 
 
-    function sendmail() {
-      var emailid = document.querySelector('#email');
-      console.log(emailid.value);
-      console.log(content.innerHTML);
-      var object = {
-        "emailid": `${emailid.value}`,
-        "html": `${content.innerHTML.toString()}`
-      };
-      // object.emailid = emailid.value ;
-      object.html = encodeURIComponent(content.innerHTML);
-      console.log(object);
-      xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("POST", `http://vast-escarpment-73783.herokuapp.com/email/${object.emailid}`, true);
-      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlhttp.send(object.html);
-
-      //fetch(`https://vast-escarpment-73783.herokuapp.com/email/${object.emailid}/${object.html}`)
-      //  .then( data => console.log(data) )
-      //  .catch( err => console.log(err) ) ;
-
-    }
-  </script>
 
 
 
-</body>
-
-</html>
+"99102": {
+  "papercode": "ETMA102",
+  "subject": "APPLIED MATHEMATICS"
+},
+"99104": {
+  "papercode": "ETPH104",
+  "subject": "APPLIED PHYSICS"
+},
+"28106": {
+  "papercode": "ETEC106",
+  "subject": "ELECTRONIC DEVICES"
+},
+"27108": {
+  "papercode": "ETCS108",
+  "subject": "INTRODUCTION TO PROGRAMMING"
+},
+"36110": {
+  "papercode": "ETME110",
+  "subject": "ENGINEERING MECHANICS"
+},
+"98112": {
+  "papercode": "ETHS112",
+  "subject": "COMMUNICATIONS SKILLS"
+},
+"56114": {
+  "papercode": "ETEN114",
+  "subject": "ENVIRONMENTAL STUDIES"
+},
+"99152": {
+  "papercode": "ETPH152",
+  "subject": "APPLIED PHYSICS LAB"
+},
+"27154": {
+  "papercode": "ETCS154",
+  "subject": "PROGRAMMING LAB"
+},
+"28156": {
+  "papercode": "ETEC156",
+  "subject": "ELECTRONIC DEVICES LAB"
+},
+"36158": {
+  "papercode": "ETME158",
+  "subject": "ENGINEERING MECHANICS LAB"
+},
+"56160": {
+  "papercode": "ETEN160",
+  "subject": "ENVIRONMENTAL STUDIES LAB"
+}
