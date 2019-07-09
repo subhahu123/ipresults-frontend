@@ -8,6 +8,9 @@
   <title>IP RESULTS</title>
 
 
+
+  
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143316096-1"></script>
   <script>
@@ -86,13 +89,19 @@
       </ul>
     </div>
   </nav>
+
+  <a target="_blank"
+    href="https://www.amazon.in/b?_encoding=UTF8&tag=coderssusper1-21&linkCode=ur2&linkId=8fb2de115c53da8394fadfe4bec6a4eb&camp=3638&creative=24630&node=1375248031">ipresults.ml</a><img
+    src="//ir-in.amazon-adsystem.com/e/ir?t=coderssusper1-21&l=ur2&o=31" width="1" height="1" border="0" alt=""
+    style="border:none !important; margin:0px !important;" />
+    
   <div class="text-center" style="margin: auto">
     <label for="search">Search By Roll No.</label>
 
     <input type="text" class="form-control" id="search" style="width: 50%;margin: auto;" value="02896202717"> <br>
 
     <input type="text" class="form-control" id="semester" style="width: 10%;margin: auto;" value="3"> <br>
-    
+
     <button class="btn" onclick="search()">Search</button>
   </div> <br>
 
@@ -106,9 +115,7 @@
 
 
   <script>
-
-
-    var table = `` ;
+    var table = ``;
     var content
 
     function search() {
@@ -581,23 +588,23 @@
       console.log(subjectdata);
       console.log(subjectdata[99201]);
       var query = document.querySelector('#search');
-      var semester = document.querySelector('#semester') ;
-      content = document.querySelector('#result') ;
+      var semester = document.querySelector('#semester');
+      content = document.querySelector('#result');
       content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
-      console.log(query.value) ;
-      console.log(semester.value) ;
-       var url = `https://vast-escarpment-73783.herokuapp.com/student/${semester.value}/${query.value}` ;
+      console.log(query.value);
+      console.log(semester.value);
+      var url = `https://vast-escarpment-73783.herokuapp.com/student/${semester.value}/${query.value}`;
       // var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
-      console.log(url) ;
+      console.log(url);
       fetch(url)
         .then(data => data.json())
         // .then( log => log[1684] )
         .then(data => {
-                    
-                          return data[0] ;
-                    })
+
+          return data[0];
+        })
         .then(data => {
-          console.log(data) ;
+          console.log(data);
           var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                 <label>Name : </label> ${data.name} </div> <br>`;
@@ -627,28 +634,26 @@
             //////////////////////
             var paperid = data.results[key].subject.slice(0, 5);
 
-            console.log(paperid) ;
-            console.log(subjectdata[paperid]) ;
+            console.log(paperid);
+            console.log(subjectdata[paperid]);
 
-            var papercode  ;
-            if(typeof(subjectdata[paperid]) != 'undefined') {
-              papercode = subjectdata[paperid].papercode ;
+            var papercode;
+            if (typeof (subjectdata[paperid]) != 'undefined') {
+              papercode = subjectdata[paperid].papercode;
+            } else {
+              papercode = "NA";
             }
-            else {
-              papercode = "NA" ;
-            }
-              
-            var subject ;
-            if(typeof(subjectdata[paperid]) != 'undefined') {
-              subject = subjectdata[paperid].subject ;
-            }
-            else {
-              subject = "NA" ;
+
+            var subject;
+            if (typeof (subjectdata[paperid]) != 'undefined') {
+              subject = subjectdata[paperid].subject;
+            } else {
+              subject = "NA";
             }
 
             // console.log(subjectdata[paperid].papercode) ;
 
-           // var paperid = "99201" ;
+            // var paperid = "99201" ;
 
             total++;
             sum += parseInt(data.results[key].marks);
@@ -671,45 +676,41 @@
 
           table +=
             `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
-            table += `<br> <input id="email">
+          table += `<br> <input id="email">
                       <br> 
-                      <button class="btn" onclick="sendmail()" > send report to yourself </button>` ;
+                      <button class="btn" onclick="sendmail()" > send report to yourself </button>`;
           content.innerHTML += table;
           console.log(data);
         })
         .catch(err => {
-                        console.log(err) ;
-                        content.innerHTML = 'Sorry No Result'
-                      });
+          console.log(err);
+          content.innerHTML = 'Sorry No Result'
+        });
     }
 
 
 
     function sendmail() {
-      var emailid = document.querySelector('#email') ;
-      console.log(emailid.value) ;
-      console.log(content.innerHTML) ;
+      var emailid = document.querySelector('#email');
+      console.log(emailid.value);
+      console.log(content.innerHTML);
       var object = {
-        "emailid" : `${emailid.value}`,
-        "html" : `${content.innerHTML.toString()}`
-      } ;
-     // object.emailid = emailid.value ;
-      object.html = encodeURIComponent(content.innerHTML) ;
-      console.log(object) ;
+        "emailid": `${emailid.value}`,
+        "html": `${content.innerHTML.toString()}`
+      };
+      // object.emailid = emailid.value ;
+      object.html = encodeURIComponent(content.innerHTML);
+      console.log(object);
       xmlhttp = new XMLHttpRequest();
       xmlhttp.open("POST", `http://vast-escarpment-73783.herokuapp.com/email/${object.emailid}`, true);
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlhttp.send(object.html) ;
+      xmlhttp.send(object.html);
 
       //fetch(`https://vast-escarpment-73783.herokuapp.com/email/${object.emailid}/${object.html}`)
       //  .then( data => console.log(data) )
       //  .catch( err => console.log(err) ) ;
 
     }
-
-
-
-
   </script>
 
 
