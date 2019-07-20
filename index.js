@@ -2,8 +2,6 @@
 
 
 
-
-
 var table = ``;
 var content
 
