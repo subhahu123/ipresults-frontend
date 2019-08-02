@@ -1,12 +1,57 @@
-
-
-
 var table = ``;
 var content
 
 function search() {
 
-    var subjectscodedata = `{
+  var subjectscodedata = `{
+      "99202": {
+        "papercode": "ETMA202",
+        "subject": "APPLIED MATHEMATICS "
+    },
+    "27204": {
+        "papercode": "ETCS204",
+        "subject": "COMPUTER ORGANIZATION AND ARCHITECTURE"
+    },
+    "27206": {
+        "papercode": "ETCS206",
+        "subject": "THEORY OF COMPUTATION"
+    },
+    "27208": {
+        "papercode": "ETCS208",
+        "subject": "DATABASE MANAGEMENT SYSTEMS"
+    },
+    "27210": {
+        "papercode": "ETCS210",
+        "subject": "OBJECT ORIENTED PROGRAMMING"
+    },
+    "28212": {
+        "papercode": "ETEC212",
+        "subject": "COMMUNICATION SYSTEMS"
+    },
+    "99250": {
+        "papercode": "ETEN250",
+        "subject": "NCC"
+    },
+    "99252": {
+        "papercode": "ETMA252",
+        "subject": "APPLIED MATHEMATICS LAB"
+    },
+    "27254": {
+        "papercode": "ETCS254",
+        "subject": "COMPUTER ORGANIZATION AND ARCHITECTURE LAB"
+    },
+    "27256": {
+        "papercode": "ETCS256",
+        "subject": "DATABASE MANAGEMENT SYSTEMSLAB"
+    },
+    "28256": {
+        "papercode": "ETEC256",
+        "subject": "COMMUNICATION SYSTEMS LAB"
+    },
+    "27258": {
+        "papercode": "ETCS258",
+        "subject": "OBJECT ORIENTED PROGRAMMING LAB"
+    },
   "99201": {
     "papercode": "ETMA201",
     "subject": "APPLIED MATHEMATICS "
@@ -470,37 +515,37 @@ function search() {
 } `;
 
 
-    var subjectdata = JSON.parse(subjectscodedata);
-    console.log(subjectdata);
-    console.log(subjectdata[99201]);
-    var query = document.querySelector('#search');
-    var semester = document.querySelector('#semester');
-    content = document.querySelector('#result');
-    content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
-    console.log(query.value);
-    console.log(semester.value);
-    var url = `https://vast-escarpment-73783.herokuapp.com/student/${semester.value}/${query.value}`;
-    // var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
-    console.log(url);
-    fetch(url)
-        .then(data => data.json())
-        // .then( log => log[1684] )
-        .then(data => {
+  var subjectdata = JSON.parse(subjectscodedata);
+  console.log(subjectdata);
+  console.log(subjectdata[99201]);
+  var query = document.querySelector('#search');
+  var semester = document.querySelector('#semester');
+  content = document.querySelector('#result');
+  content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
+  console.log(query.value);
+  console.log(semester.value);
+  var url = `https://vast-escarpment-73783.herokuapp.com/student/${semester.value}/${query.value}`;
+  // var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
+  console.log(url);
+  fetch(url)
+    .then(data => data.json())
+    // .then( log => log[1684] )
+    .then(data => {
 
-            return data[0];
-        })
-        .then(data => {
-            console.log(data);
-            var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
+      return data[0];
+    })
+    .then(data => {
+      console.log(data);
+      var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                 <label>Name : </label> ${data.name} </div> <br>`;
-            content.innerHTML = html;
-            // var table = ``;
+      content.innerHTML = html;
+      // var table = ``;
 
-            var sum = 0;
-            var total = 0;
+      var sum = 0;
+      var total = 0;
 
-            table = `<table class="table table-striped table-hover table-bordered bordered table-condensed no-margin block-shadow">
+      table = `<table class="table table-striped table-hover table-bordered bordered table-condensed no-margin block-shadow">
                                     <thead>
                                         <tr>
                                             <th style='text-align: center'>Paper Id</th>
@@ -512,39 +557,39 @@ function search() {
                                     </thead>
                                     <tbody>`;
 
-            for (key in data.results) {
+      for (key in data.results) {
 
-                /* table += `<p> ${data.results[key].subject}  
-                              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                              ${data.results[key].marks} </p>`; */
-                //////////////////////
-                var paperid = data.results[key].subject.slice(0, 5);
+        /* table += `<p> ${data.results[key].subject}  
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      ${data.results[key].marks} </p>`; */
+        //////////////////////
+        var paperid = data.results[key].subject.slice(0, 5);
 
-                console.log(paperid);
-                console.log(subjectdata[paperid]);
+        console.log(paperid);
+        console.log(subjectdata[paperid]);
 
-                var papercode;
-                if (typeof (subjectdata[paperid]) != 'undefined') {
-                    papercode = subjectdata[paperid].papercode;
-                } else {
-                    papercode = "NA";
-                }
+        var papercode;
+        if (typeof (subjectdata[paperid]) != 'undefined') {
+          papercode = subjectdata[paperid].papercode;
+        } else {
+          papercode = "NA";
+        }
 
-                var subject;
-                if (typeof (subjectdata[paperid]) != 'undefined') {
-                    subject = subjectdata[paperid].subject;
-                } else {
-                    subject = "NA";
-                }
+        var subject;
+        if (typeof (subjectdata[paperid]) != 'undefined') {
+          subject = subjectdata[paperid].subject;
+        } else {
+          subject = "NA";
+        }
 
-                // console.log(subjectdata[paperid].papercode) ;
+        // console.log(subjectdata[paperid].papercode) ;
 
-                // var paperid = "99201" ;
+        // var paperid = "99201" ;
 
-                total++;
-                sum += parseInt(data.results[key].marks);
+        total++;
+        sum += parseInt(data.results[key].marks);
 
-                table += `<tr>
+        table += `<tr>
                                     <td>${data.results[key].subject}</td>
                                     <td>${papercode}</td>
                                     <td>${subject}</td>
@@ -552,48 +597,48 @@ function search() {
                                     <td>${data.results[key].subject[6]}</td>
                                   </tr>`;
 
-            }
-            table += `</tbody>
+      }
+      table += `</tbody>
                             </table>`;
 
-            console.log(sum);
-            console.log(total);
-            var percentage = sum / total;
+      console.log(sum);
+      console.log(total);
+      var percentage = sum / total;
 
-            table +=
-                `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
-            table += `<br> <input id="email">
+      table +=
+        `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
+      table += `<br> <input id="email">
                       <br> 
                       <button class="btn" onclick="sendmail()" > send report to yourself </button>`;
-            content.innerHTML += table;
-            console.log(data);
-        })
-        .catch(err => {
-            console.log(err);
-            content.innerHTML = 'Sorry No Result'
-        });
+      content.innerHTML += table;
+      console.log(data);
+    })
+    .catch(err => {
+      console.log(err);
+      content.innerHTML = 'Sorry No Result'
+    });
 }
 
 
 
 function sendmail() {
-    var emailid = document.querySelector('#email');
-    console.log(emailid.value);
-    console.log(content.innerHTML);
-    var object = {
-        "emailid": `${emailid.value}`,
-        "html": `${content.innerHTML.toString()}`
-    };
-    // object.emailid = emailid.value ;
-    object.html = encodeURIComponent(content.innerHTML);
-    console.log(object);
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", `http://vast-escarpment-73783.herokuapp.com/email/${object.emailid}`, true);
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send(object.html);
+  var emailid = document.querySelector('#email');
+  console.log(emailid.value);
+  console.log(content.innerHTML);
+  var object = {
+    "emailid": `${emailid.value}`,
+    "html": `${content.innerHTML.toString()}`
+  };
+  // object.emailid = emailid.value ;
+  object.html = encodeURIComponent(content.innerHTML);
+  console.log(object);
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("POST", `http://vast-escarpment-73783.herokuapp.com/email/${object.emailid}`, true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send(object.html);
 
-    //fetch(`https://vast-escarpment-73783.herokuapp.com/email/${object.emailid}/${object.html}`)
-    //  .then( data => console.log(data) )
-    //  .catch( err => console.log(err) ) ;
+  //fetch(`https://vast-escarpment-73783.herokuapp.com/email/${object.emailid}/${object.html}`)
+  //  .then( data => console.log(data) )
+  //  .catch( err => console.log(err) ) ;
 
 }
