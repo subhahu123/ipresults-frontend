@@ -514,3 +514,59 @@
   "papercode": "ETEN160",
   "subject": "ENVIRONMENTAL STUDIES LAB"
 }
+
+
+"99101": {
+  "papercode": "ETMA101",
+  "subject": "APPLIED MATHEMATICS"
+},
+"99103": {
+  "papercode": "ETPH103",
+  "subject": "APPLIED PHYSICS"
+},
+"36105": {
+  "papercode": "ETME105",
+  "subject": "MANUFACTURING PROCESSES"
+},
+"49107": {
+  "papercode": "ETEE107",
+  "subject": "ELECTRICAL TECHNOLOGY"
+},
+"98109": {
+  "papercode": "ETHS109",
+  "subject": "HUMAN VALUES AND PROFESSIONAL ETHICS"
+},
+"27111": {
+  "papercode": "ETCS111",
+  "subject": "FUNDAMENTALS OF COMPUTING"
+},
+"99113": {
+  "papercode": "ETCH113",
+  "subject": "APPLIED CHEMISTRY"
+},
+"99151": {
+  "papercode": "ETPH151",
+  "subject": "APPLIED PHYSICS LAB"
+},
+"49153": {
+  "papercode": "ETEE153",
+  "subject": "ELECTRICAL TECHNOLOGY LAB"
+},
+"36155": {
+  "papercode": "ETME155",
+  "subject": "WORKSHOP PRACTICE"
+},
+"27157": {
+  "papercode": "ETCS157",
+  "subject": "FUNDAMENTALS OF COMPUTING LAB"
+},
+"36157": {
+  "papercode": "ETME157",
+  "subject": "ENGINEERING GRAPHICS LAB"
+},
+"99161": {
+  "papercode": "ETCH161",
+  "subject": "APPLIED CHEMISTRY LAB"
+}
+
+
