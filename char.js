@@ -11,5 +11,5 @@ var myBarChart = new Chart(ctx, {
             data: [0, 10, 5, 2, 20, 30, 45]
         }]
     },
-    options: options
+    options: {}
 });
