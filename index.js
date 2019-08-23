@@ -1,6 +1,10 @@
 var table = ``;
 var content
 
+
+
+
+
 function search() {
 
   var subjectscodedata = `{
@@ -636,7 +640,7 @@ function search() {
     })
     .then(data => {
       console.log(data);
-      var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
+      var html = `<div class="jumbotron" id="userid" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                 <label>Name : </label> ${data.name} </div> <br>
                                 `;
@@ -741,5 +745,16 @@ function sendmail() {
   //fetch(`https://vast-escarpment-73783.herokuapp.com/email/${object.emailid}/${object.html}`)
   //  .then( data => console.log(data) )
   //  .catch( err => console.log(err) ) ;
+
+
+  var x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function () {
+    x.className = x.className.replace("show", "");
+  }, 3000);
 
 }
