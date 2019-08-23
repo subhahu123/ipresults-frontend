@@ -639,14 +639,14 @@ function search() {
       var html = `<div class="jumbotron" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                 <label>Name : </label> ${data.name} </div> <br>
-                                <button href="#demo" data-toggle="collapse" width="100%">Result</button>`;
+                                `;
       content.innerHTML = html;
       // var table = ``;
 
       var sum = 0;
       var total = 0;
 
-      table = `<table id="demo" class="table table-striped table-hover table-bordered bordered table-condensed no-margin block-shadow collapse">
+      table = `<table id="demo" class="table table-striped table-hover table-bordered bordered table-condensed no-margin block-shadow">
                                     <thead>
                                         <tr>
                                             <th style='text-align: center'>Paper Id</th>
@@ -710,7 +710,7 @@ function search() {
         `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
       table += `<br> <input id="email">
                       <br> 
-                      <button class="btn" onclick="sendmail()" > send report to yourself </button>`;
+                      <button class="btn btn-primary" onclick="sendmail()" > Send Report </button>`;
       content.innerHTML += table;
       console.log(data);
     })
