@@ -1295,10 +1295,18 @@ function search() {
             console.log(data);
             data.forEach(data => {
                 console.log(data)
-                html += `<div class="card">
-                <div class="card-body">${data.rollNo}  &nbsp; &nbsp; &nbsp; ${data.name}</div>
-              </div>
-              <br>`
+                var calcperc = 50
+                var sum = 0;
+                var total = 0 ;
+                data.results.forEach(data => {
+                    total++ ;
+                    sum += parseInt(data.marks);
+                })
+                calcperc = sum / total ;
+                console.log(calcperc) ;
+                if(calcperc > 5 && calcperc < 99)
+                html += `<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:${calcperc}%">${data.name}
+                <label style="float:right;">${calcperc}%</label></div><br>`
             });
             content.innerHTML = html ;
         })
