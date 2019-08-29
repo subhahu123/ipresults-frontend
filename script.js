@@ -1287,7 +1287,7 @@ function search() {
     var url = `https://vast-escarpment-73783.herokuapp.com/students/${batch.value}/${branch.value}/${college.value}/${semester.value}`;
     // var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
     console.log(url);
-    var html = `` ;
+    var html = `<input class="form-control" id="myInput" type="text" placeholder="Search.."><br><br>` ;
     fetch(url)
         .then( data => data.json() )
         // .then( log => log[1684] )
@@ -1309,6 +1309,14 @@ function search() {
                 <label style="float:right;">${calcperc}%</label></div><br>`
             });
             content.innerHTML = html ;
+
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#result .progress-bar").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+              });
+
         })
         .catch(err => {
             console.log(err);
