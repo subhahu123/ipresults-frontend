@@ -642,7 +642,7 @@ function search() {
       console.log(data);
       var html = `<div class="jumbotron" id="userid" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                                <label>Name : </label> ${data.name} </div> <br>
+                                <label>Name : </label> ${data.name} <br> <label> Batch - </label> 20${data.rollNo % 100} </div> <br>
                                 `;
       content.innerHTML = html;
       // var table = ``;
