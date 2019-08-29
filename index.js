@@ -7,6 +7,659 @@ var content
 
 function search() {
 
+  var collegecode = `{
+  "101": {
+      "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
+  },
+  "104": {
+      "college": "AMITY SCHOOL OF ENGINEERING & TECHNOLOGY"
+  },
+  "104": {
+      "college": "AMITY SCHOOL OF ENGINEERING & TECHNOLOGY"
+  },
+  "115": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "132": {
+      "college": "GURU TEGH BAHADUR INSTITUTE OF TECHNOLOGY"
+  },
+  "132": {
+      "college": "GURU TEGH BAHADUR INSTITUTE OF TECHNOLOGY"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "180": {
+      "college": "DELHI TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "180": {
+      "college": "DELHI TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "209": {
+      "college": "G B PANT GOVT. ENGINEERING COLLEGE"
+  },
+  "209": {
+      "college": "G B PANT GOVT. ENGINEERING COLLEGE"
+  },
+  "255": {
+      "college": "JIMS ENGINEERING MANAGEMENT TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "512": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "512": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "551": {
+      "college": "MAHAVIR SWAMI INSTITUTE OF TECHNOLOGY"
+  },
+  "551": {
+      "college": "MAHAVIR SWAMI INSTITUTE OF TECHNOLOGY"
+  },
+  "551": {
+      "college": "MAHAVIR SWAMI INSTITUTE OF TECHNOLOGY"
+  },
+  "768": {
+      "college": "GURU TEGH BAHADUR INSTITUTE OF TECHNOLOGY"
+  },
+  "768": {
+      "college": "GURU TEGH BAHADUR INSTITUTE OF TECHNOLOGY"
+  },
+  "962": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "962": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "963": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "964": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "964": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "965": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "965": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "965": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "101": {
+      "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
+  },
+  "101": {
+      "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
+  },
+  "101": {
+      "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
+  },
+  "101": {
+      "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
+  },
+  "101": {
+      "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
+  },
+  "101": {
+      "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
+  },
+  "101": {
+      "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
+  },
+  "101": {
+      "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
+  },
+  "104": {
+      "college": "AMITY SCHOOL OF ENGINEERING & TECHNOLOGY"
+  },
+  "104": {
+      "college": "AMITY SCHOOL OF ENGINEERING & TECHNOLOGY"
+  },
+  "104": {
+      "college": "AMITY SCHOOL OF ENGINEERING & TECHNOLOGY"
+  },
+  "104": {
+      "college": "AMITY SCHOOL OF ENGINEERING & TECHNOLOGY"
+  },
+  "104": {
+      "college": "AMITY SCHOOL OF ENGINEERING & TECHNOLOGY"
+  },
+  "104": {
+      "college": "AMITY SCHOOL OF ENGINEERING & TECHNOLOGY"
+  },
+  "104": {
+      "college": "AMITY SCHOOL OF ENGINEERING & TECHNOLOGY"
+  },
+  "115": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "115": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "115": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "115": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "115": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "115": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "115": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "133": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "148": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "150": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "156": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "180": {
+      "college": "DELHI TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "180": {
+      "college": "DELHI TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "180": {
+      "college": "DELHI TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "180": {
+      "college": "DELHI TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "180": {
+      "college": "DELHI TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "180": {
+      "college": "DELHI TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "180": {
+      "college": "DELHI TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "208": {
+      "college": "BHAGWAN PARSHURAM INSTITUTE OF TECHNOLOGY"
+  },
+  "209": {
+      "college": "G B PANT GOVT. ENGINEERING COLLEGE"
+  },
+  "209": {
+      "college": "G B PANT GOVT. ENGINEERING COLLEGE"
+  },
+  "209": {
+      "college": "G B PANT GOVT. ENGINEERING COLLEGE"
+  },
+  "209": {
+      "college": "G B PANT GOVT. ENGINEERING COLLEGE"
+  },
+  "209": {
+      "college": "G B PANT GOVT. ENGINEERING COLLEGE"
+  },
+  "209": {
+      "college": "G B PANT GOVT. ENGINEERING COLLEGE"
+  },
+  "209": {
+      "college": "G B PANT GOVT. ENGINEERING COLLEGE"
+  },
+  "209": {
+      "college": "G B PANT GOVT. ENGINEERING COLLEGE"
+  },
+  "255": {
+      "college": "JIMS ENGINEERING MANAGEMENT TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "255": {
+      "college": "JIMS ENGINEERING MANAGEMENT TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "255": {
+      "college": "JIMS ENGINEERING MANAGEMENT TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "255": {
+      "college": "JIMS ENGINEERING MANAGEMENT TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "255": {
+      "college": "JIMS ENGINEERING MANAGEMENT TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "255": {
+      "college": "JIMS ENGINEERING MANAGEMENT TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "255": {
+      "college": "JIMS ENGINEERING MANAGEMENT TECHNICAL CAMPUS, GREATER NOIDA"
+  },
+  "512": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "512": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "512": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "512": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "512": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "512": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "512": {
+      "college": "BHARATI VIDYAPEETH COLLEGE OF ENGINEERING"
+  },
+  "551": {
+      "college": "MAHAVIR SWAMI INSTITUTE OF TECHNOLOGY"
+  },
+  "551": {
+      "college": "MAHAVIR SWAMI INSTITUTE OF TECHNOLOGY"
+  },
+  "551": {
+      "college": "MAHAVIR SWAMI INSTITUTE OF TECHNOLOGY"
+  },
+  "551": {
+      "college": "MAHAVIR SWAMI INSTITUTE OF TECHNOLOGY"
+  },
+  "551": {
+      "college": "MAHAVIR SWAMI INSTITUTE OF TECHNOLOGY"
+  },
+  "551": {
+      "college": "MAHAVIR SWAMI INSTITUTE OF TECHNOLOGY"
+  },
+  "552": {
+      "college": "BHAGWAN MAHAVEER COLLEGE OF ENGINEERING & MANAGEMENT"
+  },
+  "552": {
+      "college": "BHAGWAN MAHAVEER COLLEGE OF ENGINEERING & MANAGEMENT"
+  },
+  "552": {
+      "college": "BHAGWAN MAHAVEER COLLEGE OF ENGINEERING & MANAGEMENT"
+  },
+  "552": {
+      "college": "BHAGWAN MAHAVEER COLLEGE OF ENGINEERING & MANAGEMENT"
+  },
+  "552": {
+      "college": "BHAGWAN MAHAVEER COLLEGE OF ENGINEERING & MANAGEMENT"
+  },
+  "552": {
+      "college": "BHAGWAN MAHAVEER COLLEGE OF ENGINEERING & MANAGEMENT"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "553": {
+      "college": "BM INSTITUTE OF ENGINEERING & TECHNOLOGY"
+  },
+  "962": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "962": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "962": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "962": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "962": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "962": {
+      "college": "NORTHERN INDIA ENGINEERING COLLEGE"
+  },
+  "963": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "963": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "963": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "963": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "963": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "963": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "963": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "963": {
+      "college": "MAHARAJA SURAJMAL INSTITUTE OF TECHNOLOGY"
+  },
+  "964": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "964": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "964": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "964": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "964": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "964": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "964": {
+      "college": "MAHARAJA AGRASEN INSTITUTE OF TECHNOLOGY"
+  },
+  "965": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "965": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "965": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "965": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "965": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "965": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  },
+  "965": {
+      "college": "HMR INSTITUTE OF TECHNOLOGY & MANAGEMENT"
+  }
+}`
+
+
+
+
+
+
+
+console.log(institutecode) ;
+
+
+
+
+
+
+
   var subjectscodedata = `{
     "99102": {
       "papercode": "ETMA102",
@@ -620,6 +1273,7 @@ function search() {
 
 
   var subjectdata = JSON.parse(subjectscodedata);
+  var institutecode = JSON.parse(collegecode) ;
   console.log(subjectdata);
   console.log(subjectdata[99201]);
   var query = document.querySelector('#search');
@@ -642,7 +1296,9 @@ function search() {
       console.log(data);
       var html = `<div class="jumbotron" id="userid" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                                <label>Name : </label> ${data.name} <br> <label> Batch - </label> 20${data.rollNo % 100} </div> <br>
+                                <label>Name : </label> ${data.name} <br> <label>College Name : 
+                                </label> ${institutecode[parseInt(((data.rollNo / 100000)%1000))].college} 
+                                &nbsp; &nbsp; &nbsp; &nbsp; <label> Batch - </label> 20${data.rollNo % 100} </div> <br>
                                 `;
       content.innerHTML = html;
       // var table = ``;
