@@ -1306,7 +1306,7 @@ function search() {
                 console.log(calcperc) ;
                 if(calcperc > 5 && calcperc < 99)
                 html += `<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:${calcperc}%">${data.name}
-                <label style="float:right;">${calcperc}%</label></div><br>`
+                <label style="float:right;">${calcperc}%</label></div>`
             });
             content.innerHTML = html ;
 
