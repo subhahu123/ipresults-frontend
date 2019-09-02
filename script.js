@@ -1284,6 +1284,9 @@ function search() {
     content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
     console.log(batch.value);
     console.log(semester.value);
+
+    var studentsdata ;
+
     var url = `https://vast-escarpment-73783.herokuapp.com/students/${batch.value}/${branch.value}/${college.value}/${semester.value}`;
     // var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
     console.log(url);
