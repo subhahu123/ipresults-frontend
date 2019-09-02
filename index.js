@@ -1370,7 +1370,8 @@ console.log(institutecode) ;
         `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
       table += `<br> <input id="email">
                       <br> 
-                      <button class="btn btn-primary" onclick="sendmail()" > Send Report </button>`;
+                      <button class="btn btn-primary" onclick="sendmail()" > Send Report </button>
+                      <button class="btn btn-success" onclick="generatePDF()">Download as PDF</button>`;
       content.innerHTML += table;
       console.log(data);
     })
