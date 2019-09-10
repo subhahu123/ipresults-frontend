@@ -7,7 +7,7 @@ var content
 
 function search() {
 
-  var collegecode = `{
+    var collegecode = `{
   "101": {
       "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
   },
@@ -652,7 +652,7 @@ function search() {
 
 
 
-console.log(institutecode) ;
+    console.log(institutecode);
 
 
 
@@ -660,7 +660,51 @@ console.log(institutecode) ;
 
 
 
-  var subjectscodedata = `{
+    var subjectscodedata = `{
+    "99201": {
+        "papercode": "ETMA201",
+        "subject": "APPLIED MATHEMATICS"
+      },
+      "28203": {
+        "papercode": "ETEC203",
+        "subject": "ANALOG ELECTRONICS"
+      },
+      "28205": {
+        "papercode": "ETEC205",
+        "subject": "SWITCHING THEORY AND LOGIC DESIGN"
+      },
+      "28207": {
+        "papercode": "ETEC207",
+        "subject": "ELECTRONIC INSTRUMENTS AND MEASUREMENTS"
+      },
+      "27209": {
+        "papercode": "ETCS209",
+        "subject": "DATA STRUCTURES"
+      },
+      "28211": {
+        "papercode": "ETEC211",
+        "subject": "SIGNALS AND SYSTEMS"
+      },
+      "28251": {
+        "papercode": "ETEC251",
+        "subject": "ANALOG ELECTRONICS "
+      },
+      "28253": {
+        "papercode": "ETEC253",
+        "subject": "SWITCHING THEORY AND LOGIC DESIGN LAB"
+      },
+      "27255": {
+        "papercode": "ETCS255",
+        "subject": "DATA STRUCTURES LAB"
+      },
+      "28257": {
+        "papercode": "ETEC257",
+        "subject": "ELECTRONIC INSTRUMENTS AND MEASUREMENTS LAB"
+      },
+      "28259": {
+        "papercode": "ETEC259",
+        "subject": "SIGNALS AND SYSTEMS LAB"
+      },
     "99102": {
       "papercode": "ETMA102",
       "subject": "APPLIED MATHEMATICS"
@@ -1272,41 +1316,41 @@ console.log(institutecode) ;
 } `;
 
 
-  var subjectdata = JSON.parse(subjectscodedata);
-  var institutecode = JSON.parse(collegecode) ;
-  console.log(subjectdata);
-  console.log(subjectdata[99201]);
-  var query = document.querySelector('#search');
-  var semester = document.querySelector('#semester');
-  content = document.querySelector('#result');
-  content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
-  console.log(query.value);
-  console.log(semester.value);
-  var url = `https://vast-escarpment-73783.herokuapp.com/student/${semester.value}/${query.value}`;
-  // var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
-  console.log(url);
-  fetch(url)
-    .then(data => data.json())
-    // .then( log => log[1684] )
-    .then(data => {
+    var subjectdata = JSON.parse(subjectscodedata);
+    var institutecode = JSON.parse(collegecode);
+    console.log(subjectdata);
+    console.log(subjectdata[99201]);
+    var query = document.querySelector('#search');
+    var semester = document.querySelector('#semester');
+    content = document.querySelector('#result');
+    content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
+    console.log(query.value);
+    console.log(semester.value);
+    var url = `https://vast-escarpment-73783.herokuapp.com/student/${semester.value}/${query.value}`;
+    // var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
+    console.log(url);
+    fetch(url)
+        .then(data => data.json())
+        // .then( log => log[1684] )
+        .then(data => {
 
-      return data[0];
-    })
-    .then(data => {
-      console.log(data);
-      var html = `<div class="jumbotron" id="userid" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
+            return data[0];
+        })
+        .then(data => {
+            console.log(data);
+            var html = `<div class="jumbotron" id="userid" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                 <label>Name : </label> ${data.name} <br> <label>College Name : 
                                 </label> ${institutecode[parseInt(((data.rollNo / 100000)%1000))].college} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; <label> Batch - </label> 20${data.rollNo % 100} </div> <br>
                                 `;
-      content.innerHTML = html;
-      // var table = ``;
+            content.innerHTML = html;
+            // var table = ``;
 
-      var sum = 0;
-      var total = 0;
+            var sum = 0;
+            var total = 0;
 
-      table = `<table id="demo" class="table table-striped table-hover table-bordered bordered table-condensed no-margin block-shadow">
+            table = `<table id="demo" class="table table-striped table-hover table-bordered bordered table-condensed no-margin block-shadow">
                                     <thead>
                                         <tr>
                                             <th style='text-align: center'>Paper Id</th>
@@ -1318,39 +1362,39 @@ console.log(institutecode) ;
                                     </thead>
                                     <tbody>`;
 
-      for (key in data.results) {
+            for (key in data.results) {
 
-        /* table += `<p> ${data.results[key].subject}  
-                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                      ${data.results[key].marks} </p>`; */
-        //////////////////////
-        var paperid = data.results[key].subject.slice(0, 5);
+                /* table += `<p> ${data.results[key].subject}  
+                              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                              ${data.results[key].marks} </p>`; */
+                //////////////////////
+                var paperid = data.results[key].subject.slice(0, 5);
 
-        console.log(paperid);
-        console.log(subjectdata[paperid]);
+                console.log(paperid);
+                console.log(subjectdata[paperid]);
 
-        var papercode;
-        if (typeof (subjectdata[paperid]) != 'undefined') {
-          papercode = subjectdata[paperid].papercode;
-        } else {
-          papercode = "NA";
-        }
+                var papercode;
+                if (typeof (subjectdata[paperid]) != 'undefined') {
+                    papercode = subjectdata[paperid].papercode;
+                } else {
+                    papercode = "NA";
+                }
 
-        var subject;
-        if (typeof (subjectdata[paperid]) != 'undefined') {
-          subject = subjectdata[paperid].subject;
-        } else {
-          subject = "NA";
-        }
+                var subject;
+                if (typeof (subjectdata[paperid]) != 'undefined') {
+                    subject = subjectdata[paperid].subject;
+                } else {
+                    subject = "NA";
+                }
 
-        // console.log(subjectdata[paperid].papercode) ;
+                // console.log(subjectdata[paperid].papercode) ;
 
-        // var paperid = "99201" ;
+                // var paperid = "99201" ;
 
-        total++;
-        sum += parseInt(data.results[key].marks);
+                total++;
+                sum += parseInt(data.results[key].marks);
 
-        table += `<tr>
+                table += `<tr>
                                     <td>${data.results[key].subject}</td>
                                     <td>${papercode}</td>
                                     <td>${subject}</td>
@@ -1358,60 +1402,60 @@ console.log(institutecode) ;
                                     <td>${data.results[key].subject[6]}</td>
                                   </tr>`;
 
-      }
-      table += `</tbody>
+            }
+            table += `</tbody>
                             </table>`;
 
-      console.log(sum);
-      console.log(total);
-      var percentage = sum / total;
+            console.log(sum);
+            console.log(total);
+            var percentage = sum / total;
 
-      table +=
-        `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
-      table += `<br> <input id="email">
+            table +=
+                `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
+            table += `<br> <input id="email">
                       <br> 
                       <button class="btn btn-primary" onclick="sendmail()" > Send Report </button>
                       <button class="btn btn-success" onclick="generatePDF()">Download as PDF</button>`;
-      content.innerHTML += table;
-      console.log(data);
-    })
-    .catch(err => {
-      console.log(err);
-      content.innerHTML = 'Sorry No Result'
-    });
+            content.innerHTML += table;
+            console.log(data);
+        })
+        .catch(err => {
+            console.log(err);
+            content.innerHTML = 'Sorry No Result'
+        });
 }
 
 
 
 function sendmail() {
-  var emailid = document.querySelector('#email');
-  console.log(emailid.value);
-  console.log(content.innerHTML);
-  var object = {
-    "emailid": `${emailid.value}`,
-    "html": `${content.innerHTML.toString()}`
-  };
-  // object.emailid = emailid.value ;
-  object.html = encodeURIComponent(content.innerHTML);
-  console.log(object);
-  xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", `http://vast-escarpment-73783.herokuapp.com/email/${object.emailid}`, true);
-  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xmlhttp.send(object.html);
+    var emailid = document.querySelector('#email');
+    console.log(emailid.value);
+    console.log(content.innerHTML);
+    var object = {
+        "emailid": `${emailid.value}`,
+        "html": `${content.innerHTML.toString()}`
+    };
+    // object.emailid = emailid.value ;
+    object.html = encodeURIComponent(content.innerHTML);
+    console.log(object);
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", `http://vast-escarpment-73783.herokuapp.com/email/${object.emailid}`, true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send(object.html);
 
-  //fetch(`https://vast-escarpment-73783.herokuapp.com/email/${object.emailid}/${object.html}`)
-  //  .then( data => console.log(data) )
-  //  .catch( err => console.log(err) ) ;
+    //fetch(`https://vast-escarpment-73783.herokuapp.com/email/${object.emailid}/${object.html}`)
+    //  .then( data => console.log(data) )
+    //  .catch( err => console.log(err) ) ;
 
 
-  var x = document.getElementById("snackbar");
+    var x = document.getElementById("snackbar");
 
-  // Add the "show" class to DIV
-  x.className = "show";
+    // Add the "show" class to DIV
+    x.className = "show";
 
-  // After 3 seconds, remove the show class from DIV
-  setTimeout(function () {
-    x.className = x.className.replace("show", "");
-  }, 3000);
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function () {
+        x.className = x.className.replace("show", "");
+    }, 3000);
 
 }
