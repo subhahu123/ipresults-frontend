@@ -1338,7 +1338,7 @@ function search() {
         })
         .then(data => {
             console.log(data);
-            var html = `<div class="jumbotron" id="userid" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
+            var html = `<div class="container" id="userid" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                 <label>Name : </label> ${data.name} <br> <label>College Name : 
                                 </label> ${institutecode[parseInt(((data.rollNo / 100000)%1000))].college} 
