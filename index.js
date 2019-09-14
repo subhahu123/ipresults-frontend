@@ -1338,11 +1338,11 @@ function search() {
         })
         .then(data => {
             console.log(data);
-            var html = `<div class="container" id="userid" style="padding: 10px;"><label>RollNo. : </label> ${data.rollNo} 
+            var html = `<div class="container" id="userid" style="padding: 10px;"><h5>Student Roll No. : </h5> ${data.rollNo} 
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                                <label>Name : </label> ${data.name} <br> <label>College Name : 
-                                </label> ${institutecode[parseInt(((data.rollNo / 100000)%1000))].college} 
-                                &nbsp; &nbsp; &nbsp; &nbsp; <label> Batch - </label> 20${data.rollNo % 100} </div> <br>
+                                <h5>Student Name : </h5> ${data.name} <br> <h5>College Name : 
+                                </h5> ${institutecode[parseInt(((data.rollNo / 100000)%1000))].college} 
+                                &nbsp; &nbsp; &nbsp; &nbsp; <h5>Batch - </h5> 20${data.rollNo % 100} </div> <br>
                                 `;
             content.innerHTML = html;
             // var table = ``;
