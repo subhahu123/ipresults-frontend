@@ -1417,6 +1417,9 @@ function search() {
                       <button class="btn btn-primary" onclick="sendmail()" > Send Report </button>
                       <button class="btn btn-success" onclick="generatePDF()">Download as PDF</button>`;
             content.innerHTML += table;
+
+            content.style.display = "block" ;
+            document.querySelector('#container1').style.display = "none" ;
             console.log(data);
         })
         .catch(err => {

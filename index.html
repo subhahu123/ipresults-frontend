@@ -163,35 +163,6 @@
       }
     }
 
-
-
-
-    label {
-      font-weight: bold;
-    }
-
-
-
-    .jumbotron {
-      padding: 1%;
-      background-color: cyan;
-    }
-
-    #userid {
-      background-color: yellow;
-    }
-
-    .loader {
-      border: 16px solid #f3f3f3;
-      border-radius: 50%;
-      border-top: 16px solid #3498db;
-      width: 120px;
-      height: 120px;
-      -webkit-animation: spin 2s linear infinite;
-      /* Safari */
-      animation: spin 2s linear infinite;
-    }
-
     /* Safari */
     @-webkit-keyframes spin {
       0% {
@@ -213,8 +184,77 @@
       }
     }
 
+
+
+    body {
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+
+    .jumbotron {
+      padding: 1%;
+      background-color: rgb(34, 71, 131);
+      height: 155px;
+    }
+
+    #userid {
+      background-color: yellow;
+    }
+
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      /* Safari */
+      animation: spin 2s linear infinite;
+    }
+
     .logo {
-      width: 12%;
+      width: 153px !important;
+      height: 126px !important;
+      display: inline;
+    }
+
+    .row {
+      width: 50%;
+    }
+
+    #head-box {
+      margin-left: 20%;
+      margin-right: 30%;
+    }
+
+    .container {
+      border-color: rgb(34, 71, 131);
+      border-width: 5px;
+    }
+
+    #container1 {
+      border-style: solid;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    #result-head {
+      color: rgb(34, 71, 131) !important;
+    }
+
+    #result {
+      display: none;
+      border-style: solid none none none;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    #logo-heading {
+      color: rgb(249, 247, 238);
     }
 
 
@@ -229,16 +269,20 @@
 
 
 
-<script src="./pdfgenerator.js"></script>
+  <script src="./pdfgenerator.js"></script>
 
-<script>
-  function generatePDF() {
-    // Choose the element that our invoice is rendered in.
-    const element = document.getElementById("result");
-    // Choose the element and save the PDF for our user.
-    html2pdf().set({ html2canvas: { scale: 4 } }).from(element).save("result.pdf");
-  }
-</script>
+  <script>
+    function generatePDF() {
+      // Choose the element that our invoice is rendered in.
+      const element = document.getElementById("result");
+      // Choose the element and save the PDF for our user.
+      html2pdf().set({
+        html2canvas: {
+          scale: 4
+        }
+      }).from(element).save("result.pdf");
+    }
+  </script>
 
 
 </head>
@@ -247,13 +291,21 @@
 
 
   <div class="jumbotron text-center">
-    <img src="./logo.png" class="logo">
-    <h1>Guru Gobind Singh Indraprastha University</h1>
-    <h2>B.Tech - Result</h2>
+    <div class="row" id="head-box" style="display: flex;">
+      <div class="col" style="width:30%;">
+        <img src="./logo.png" class="logo">
+      </div>
+      <div class="col" style="width:70%;">
+        <h2 id="logo-heading">Guru Gobind Singh <br /> Indraprastha University</h2>
+      </div>
+    </div>
   </div>
 
+  <h1 id="result-head"> <b> B.TECH &nbsp; RESULT </b> </h1> 
+  
+  <br>
 
-  <div class="container">
+  <div class="container" id="container1">
     <div class="text-center" style="margin: auto">
       <label for="search"><b>Search By Roll No.</b></label>
 
@@ -276,7 +328,6 @@
     </div>
   </div> <br>
 
-  <div><a href="./script.html">for searching results by college</a></div>
 
 
   <div id="result" class="text-center container">
