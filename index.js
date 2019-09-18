@@ -1350,7 +1350,7 @@ function search() {
             var sum = 0;
             var total = 0;
 
-            table = `<table id="demo" class="table table-striped table-hover table-bordered bordered table-condensed no-margin block-shadow">
+            table = `<div class="table-responsive"> <table id="demo" class="table table-striped table-hover table-bordered bordered table-condensed no-margin block-shadow">
                                     <thead>
                                         <tr>
                                             <th style='text-align: center'>Paper Id</th>
@@ -1404,7 +1404,7 @@ function search() {
 
             }
             table += `</tbody>
-                            </table>`;
+                            </table> </div>`;
 
             console.log(sum);
             console.log(total);
