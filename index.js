@@ -1323,7 +1323,10 @@ function search() {
     var query = document.querySelector('#search');
     var semester = document.querySelector('#semester');
     content = document.querySelector('#result');
-    content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
+    buttonresults = document.querySelector('#search-results');
+    buttonresults.innerHTML += `<div class="loader" style="margin: auto;"></div>`;
+
+  //  content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
     console.log(query.value);
     console.log(semester.value);
     var url = `https://vast-escarpment-73783.herokuapp.com/student/${semester.value}/${query.value}`;
