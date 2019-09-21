@@ -1415,12 +1415,25 @@ function search() {
 
             table +=
                 `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
-            table += `<br> <input id="email">
-                      <br> 
-                      <button class="btn btn-primary" onclick="sendmail()" > Send Report </button>
-                      <div id="email-button">
-                      <i class="far fa-envelope" style="color:white;font-size:48px;background-color: green;"></i>
-                  </div>
+            table += `<br> 
+                      <br>                       
+                      <div id="emailbox-position">
+        <div class="container" id="email-box">
+          <div class="jumbotron text-center" style="background-color:green;color: white;" id="email-head">
+            Send Your Report
+          </div>
+          <div class="container">
+          <input id="email" name="email">
+            <br>
+            <br>
+            <button class="btn btn-primary" onclick="sendmail()" > Send Report </button>
+          </div>
+        </div>
+        <br>
+        <div id="email-icon">
+          <i class="far fa-envelope" style="color:white;font-size:48px;background-color: green;"></i>
+        </div>
+      </div>
                       <button class="btn btn-success" onclick="generatePDF()">Download as PDF</button>`;
             content.innerHTML += table;
 
