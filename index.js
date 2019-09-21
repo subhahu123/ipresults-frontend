@@ -1418,11 +1418,11 @@ function search() {
             table += `<br> 
                       <br>                       
                       <div id="emailbox-position">
-        <div class="container" id="email-box">
+        <div class="container collapse" id="email-box">
           <div class="jumbotron text-center" style="background-color:green;color: white;" id="email-head">
             Send Your Report
           </div>
-          <div class="container">
+          <div class="container" style="border: 1px solid #e4e4e4;">
           <input id="email" name="email">
             <br>
             <br>
@@ -1431,7 +1431,7 @@ function search() {
         </div>
         <br>
         <div id="email-icon">
-          <i class="far fa-envelope" style="color:white;font-size:48px;background-color: green;"></i>
+          <i class="far fa-envelope" style="color:white;font-size:48px;background-color: green;" data-toggle="collapse" data-target="#email-box"></i>
         </div>
       </div>
                       <button class="btn btn-success" onclick="generatePDF()">Download as PDF</button>`;
