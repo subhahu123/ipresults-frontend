@@ -1326,7 +1326,7 @@ function search() {
     buttonresults = document.querySelector('#search-results');
     buttonresults.innerHTML += `<div class="loader" style="margin: auto;"></div>`;
 
-  //  content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
+    //  content.innerHTML = `<div class="loader" style="margin: auto;"></div>`;
     console.log(query.value);
     console.log(semester.value);
     var url = `https://vast-escarpment-73783.herokuapp.com/student/${semester.value}/${query.value}`;
@@ -1418,11 +1418,14 @@ function search() {
             table += `<br> <input id="email">
                       <br> 
                       <button class="btn btn-primary" onclick="sendmail()" > Send Report </button>
+                      <div id="email-button">
+                      <i class="far fa-envelope" style="color:white;font-size:48px;background-color: green;"></i>
+                  </div>
                       <button class="btn btn-success" onclick="generatePDF()">Download as PDF</button>`;
             content.innerHTML += table;
 
-            content.style.display = "block" ;
-            document.querySelector('#container1').style.display = "none" ;
+            content.style.display = "block";
+            document.querySelector('#container1').style.display = "none";
             console.log(data);
         })
         .catch(err => {
