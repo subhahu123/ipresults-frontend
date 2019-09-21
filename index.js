@@ -1430,11 +1430,14 @@ function search() {
           </div>
         </div>
         <br>
+        <div id="download-icon">
+            <i class="fa fa-download" aria-hidden="true" style="color:white;font-size:48px;background-color: green;" onclick="generatePDF()"></i>
+        </div>
         <div id="email-icon">
           <i class="far fa-envelope" style="color:white;font-size:48px;background-color: green;" data-toggle="collapse" data-target="#email-box"></i>
         </div>
-      </div>
-                      <button class="btn btn-success" onclick="generatePDF()">Download as PDF</button>`;
+      </div>`;
+
             content.innerHTML += table;
 
             content.style.display = "block";
@@ -1471,7 +1474,7 @@ function sendmail() {
 
 
     var x = document.getElementById("snackbar");
-
+    x.textContent = "Email Sent";
     // Add the "show" class to DIV
     x.className = "show";
 

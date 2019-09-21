@@ -297,6 +297,20 @@
       bottom: 0;
       background-color: green;
       border-radius: 50%;
+      z-index: 0;
+    }
+
+    #download-icon {
+      position: fixed;
+      display: block;
+      padding: 20px;
+      margin: 20px;
+      cursor: pointer;
+      right: 0;
+      bottom: 100px;
+      background-color: green;
+      border-radius: 50%;
+      z-index: 1;
     }
 
     #email-box {
@@ -304,6 +318,7 @@
       height: 200px;
       background-color: white;
       padding: 0;
+      z-index: 2;
     }
 
     #email-head {
@@ -384,6 +399,21 @@
 
   <script>
     function generatePDF() {
+
+
+
+      var x = document.getElementById("snackbar");
+      x.textContent = "Downloading......"
+      // Add the "show" class to DIV
+      x.className = "show";
+
+      // After 3 seconds, remove the show class from DIV
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
+      }, 3000);
+
+
+
       // Choose the element that our invoice is rendered in.
       const element = document.getElementById("result");
       // Choose the element and save the PDF for our user.
@@ -402,7 +432,7 @@
 
 
 
-<!--
+  <!--
     <div id="emailbox-position">
         <div class="container" id="email-box">
           <div class="jumbotron text-center" style="background-color:green;color: white;" id="email-head">
