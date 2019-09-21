@@ -1426,7 +1426,7 @@ function search() {
           <input id="email" name="email">
             <br>
             <br>
-            <button class="btn btn-primary" onclick="sendmail()" > Send Report </button>
+            <button class="btn btn-success" onclick="sendmail()" style="width:100%;"> Send Report </button>
           </div>
         </div>
         <br>
