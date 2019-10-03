@@ -1353,7 +1353,7 @@ function search() {
                                 `;
         */
 
-            var html = `<div class="container" id="userid" style="padding: 10px;"><img src="./avatar.png" ><h5>Roll Number : </h5> ${data.rollNo} / 20${data.rollNo % 100}
+            var html = `<div class="container" id="userid" style="padding: 10px;"><img src="./avatar.png" style="height:170px"><h5>Roll Number : </h5> ${data.rollNo} / 20${data.rollNo % 100}
     
        <h5>Student Name : </h5> ${data.name} <br> <h5>College Name : 
        </h5> ${institutecode[parseInt(((data.rollNo / 100000)%1000))].college} 
