@@ -1321,6 +1321,7 @@ function search() {
     console.log(subjectdata);
     console.log(subjectdata[99201]);
     var query = document.querySelector('#search');
+    var resultHeading = document.querySelector('#result-head')
     var semester = document.querySelector('#semester');
     content = document.querySelector('#result');
     buttonresults = document.querySelector('#search-results');
@@ -1367,6 +1368,10 @@ function search() {
        -->
        <br>
        `;
+
+       resultHeading.innerHTML = `<b>STUDENT DETAILS <span class="badge badge-light" style="background-color:rgb(34, 71, 131);color:white;">${semester.value}</span></b>`
+
+
 
 
             content.innerHTML = html;
@@ -1436,7 +1441,8 @@ function search() {
             var percentage = sum / total;
 
             table +=
-                `<br><div style="float: right;" ><label> Percentage : </label> <span> ${percentage} </span> &nbsp; &nbsp; &nbsp; &nbsp; </div>`;
+                `<br><div style="float: right;" ><label></label>
+                <span class="badge badge-pill badge-success" style="font-size:x-large;">Percentage : ${percentage}</span>&nbsp; &nbsp; &nbsp; &nbsp; </div>`;
             table += `<br> 
                       <br>                       
                       <div id="emailbox-position">
