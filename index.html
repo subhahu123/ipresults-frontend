@@ -235,7 +235,7 @@
     }
 
     .row {
-      width: 50%;
+      display: flex;
     }
 
     #head-box {
@@ -476,49 +476,135 @@
 
 
   <div class="jumbotron text-center">
-    <div class="row" id="head-box" style="display: flex;">
-      <div class="col" style="width:30%;">
+    <div id="head-box" style="display: flex;">
+      <div>
         <img src="./logo.png" class="logo">
       </div>
-      <div class="col" style="width:70%;">
+      <br>
+      <div>
         <h2 id="logo-heading">Guru Gobind Singh <br /> Indraprastha University</h2>
       </div>
     </div>
   </div>
 
-  <h1 id="result-head"> <b> B.TECH &nbsp; RESULT </b> </h1>
 
-  <br> <br> <br>
+  <div class="row">
 
-  <div class="container" id="container1">
-    <div class="text-center" style="margin: auto">
-      <label for="search"><b>Search By Roll No.</b></label>
+    <div class="container col">
 
-      <input type="text" class="form-control" id="search" style="width: 50%;margin: auto;" value="02896202717">
-      <br>
+      <h1 id="result-head"> <b> FIND RESULT </b> </h1>
 
-      <div class="form-group" style="width: 20%;margin: auto;">
-        <label for="sel1"><b>Select Semester:</b></label>
-        <select class="form-control" id="semester">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-        </select>
+
+
+      <div class="container" id="container1">
+        <br>
+        <div class="text-center" style="margin: auto">
+          <label for="search"><b>Roll Number</b></label>
+
+          <input type="text" class="form-control" id="search" style="width: 30%;margin: auto;" value="02896202717">
+          <br>
+
+          <div class="form-group" style="width: 10%;margin: auto;">
+            <label for="sel1"><b>Semester</b></label>
+            <select class="form-control text-center" id="semester">
+
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+
+              <!--      <option>1&#738;&#x1D57;</option>
+              <option>2&#8319;&#7496;</option>
+              <option>3&#691;&#7496;</option>
+              <option>4ᵗʰ</option>
+              <option>5ᵗʰ</option>
+              <option>6ᵗʰ</option>
+          -->
+
+            </select>
+          </div> <br>
+
+          <button class="btn btn-primary" onclick="search()" id="search-results">Search</button>
+        </div>
       </div> <br>
 
-      <button class="btn btn-primary" onclick="search()" id="search-results">Search</button>
+      <div id="result" class="text-center container">
+
+
+      </div>
+
     </div>
-  </div> <br>
+
+
+    <div class="container col" style="">
+
+
+      <b>ABOUT GURU GOBIND SINGH INDRAPRASTHA UNIVERSITY </b> <br> <br>
+      Guru Gobind Singh Indraprastha University has been established by Govt. of NCT of Delhi under the provisions of
+      Guru Gobind Singh Indraprastha University Act, 1998. The University is recognized by the University Grants
+      Commission (UGC), India under Section 2 (f) and 12 (b) of the UGC Act. The University was graded as "A" by the
+      National Assessment and Accreditation Council, Bangalore for the period 2013 to 2018.
+      <br>
+      It is an affiliating and teaching University which aims at facilitating and promoting studies, research and
+      extension work in emerging areas of higher education with focus on professional education, for example
+      engineering, technology, management studies, medicine, pharmacy, nursing, law, etc., and also to achieve
+      excellence in these and connected fields and other matters connected therewith or incidental thereto.
+      <br>
+      In order to serve the broad purpose for which the University is established, it set out its statements of vision,
+      mission and Quality Policy.
+      <br> <br>
 
 
 
-  <div id="result" class="text-center container">
+      <b>ABOUT DR. AKHILESH DAS GUPTA INSTITUTE OF TECHNOLOGY AND MANAGEMENT</b> <br> <br>
+      Dr. Akhilesh Das Gupta Institute of Technology and Management, formerly known as Northern India Engineering
+      College(NIEC), New Delhi was established by BBDES, LUCKNOW in the year 2003. NIEC has an aesthetically designed
+      campus spread over approximately 9 acres of lush green environment at Shastri Park. The Campus comprises of five
+      interconnected blocks covering a built up area of approx. 3.0 Lac sq, ft. NIEC offers following Under Graduate and
+      Post Graduate level full time Professional programs approved by AICTE in affiliation with Guru Gobind Singh
+      Indraprastha University (GGSIPU), Delhi.
+
+    </div>
 
 
   </div>
+
+
+  <br> <br>
+
+
+  <div class="jumbotron" style="margin-top:10px;height:250px;margin-bottom:0;color:white;">
+    <b>DISCLAIMER FOR GGSIPU RESULTS </b> <br> <br>
+    If you require any more information or have any questions about our site's disclaimer, please feel free to contact
+    us by email at jainsubhahu@gmail.com. All the information on this website - http://ipresults.ml/ - is published in
+    good faith and for general information purpose only. GGSIPU Results does not make any warranties about the
+    completeness, reliability and accuracy of this information. Any action you take upon the information you find on
+    this website (GGSIPU Results), is strictly at your own risk. GGSIPU Results will not be liable for any losses
+    and/or damages in connection with the use of our website.
+    <br>
+    From our website, you can visit other websites by following hyperlinks to such external sites. While we strive to
+    provide only quality links to useful and ethical websites, we have no control over the content and nature of these
+    sites. These links to other websites do not imply a recommendation for all the content found on these sites. Site
+    owners and content may change without notice and may occur before we have the opportunity to remove a link which
+    may have gone 'bad'.
+    <br>
+    Please be also aware that when you leave our website, other sites may have different privacy policies and terms
+    which are beyond our control. And be sure to check the Privacy Policies of these sites as well as their "Terms
+    of Service" before engaging in any business or uploading any information.
+
+  </div>
+
+
+
+
+
+
+
+
+
+
 
 
 

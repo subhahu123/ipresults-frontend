@@ -1341,12 +1341,30 @@ function search() {
         })
         .then(data => {
             console.log(data);
-            var html = `<div class="container" id="userid" style="padding: 10px;"><h5>Student Roll No. : </h5> ${data.rollNo} 
+            /**    var html = `<div class="container" id="userid" style="padding: 10px;"><h5>Roll Number : </h5> ${data.rollNo} / 20${data.rollNo % 100}
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                                 <h5>Student Name : </h5> ${data.name} <br> <h5>College Name : 
                                 </h5> ${institutecode[parseInt(((data.rollNo / 100000)%1000))].college} 
-                                &nbsp; &nbsp; &nbsp; &nbsp; <h5>Batch - </h5> 20${data.rollNo % 100} </div> <br>
+                                &nbsp; &nbsp; &nbsp; &nbsp; 
+                                <!--
+                                <h5>Batch - </h5> 20${data.rollNo % 100} </div> 
+                                -->
+                                <br>
                                 `;
+        */
+
+            var html = `<div class="container" id="userid" style="padding: 10px;"><img src="./avatar.png"><h5>Roll Number : </h5> ${data.rollNo} / 20${data.rollNo % 100}
+    
+       <h5>Student Name : </h5> ${data.name} <br> <h5>College Name : 
+       </h5> ${institutecode[parseInt(((data.rollNo / 100000)%1000))].college} 
+     
+       <!--
+       <h5>Batch - </h5> 20${data.rollNo % 100} </div> 
+       -->
+       <br>
+       `;
+
+
             content.innerHTML = html;
             // var table = ``;
 
