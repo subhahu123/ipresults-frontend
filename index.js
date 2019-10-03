@@ -1354,7 +1354,7 @@ function search() {
         */
 
             var html = `<img src="./avatar.png" style="height:170px;float:left;">
-            <div class="container" id="userid" style="padding: 10px;text-align:left;margin-top:40px;margin-left:180px">
+            <div class="container" id="userid" style="padding: 10px;text-align:left;margin-top:40px;padding-left:180px">
             <h5>Roll Number : </h5> ${data.rollNo} / 20${data.rollNo % 100}
             <br>
        <h5>Student Name : </h5> ${data.name} 
