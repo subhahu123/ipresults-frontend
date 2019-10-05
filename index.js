@@ -1366,7 +1366,7 @@ function search() {
        <br>
        `;
 
-       resultHeading.innerHTML = `<b>STUDENT DETAILS <span class="badge badge-light" style="background-color:rgb(34, 71, 131);color:white;">${semester.value}</span></b>`
+            resultHeading.innerHTML = `<b>STUDENT DETAILS <span class="badge badge-light" style="background-color:rgb(34, 71, 131);color:white;">${semester.value}</span></b>`
 
 
 
