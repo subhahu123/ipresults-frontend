@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Result - B.Tech</title>
+
+
+
+    <meta name="description"
+        content="IPURESULTS - GGSIPU B.TECH RESULTS FOR AFFILIATED INSTITUTES,now you don't need to download result pdf and search your name in
+      them and then calculate percentages,IPURESULTS will do it all for you in a single click.Also you can know your College and University ranks
+      along with total marks and number of backlogs for all the semesters.Total number of pending backlogs is also shown.">
+
+    <meta name="keywords" content="GGSIPU,B.Tech,Results,total marks,Percentage,Contact page,contact">
+
+    <meta name="author" content="Subhahu Jain">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="./logo.png" type="image/x-icon" />
+
+    <title>IP RESULTS</title>
+
+
+
+
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5345114477325138",
+            enable_page_level_ads: true
+        });
+    </script>
+
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143316096-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-143316096-1');
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/7fa36e12b7.js" crossorigin="anonymous"></script>
+
+
+
+
+    <style>
+        /* The snackbar - position it at the bottom and in the middle of the screen */
+        #snackbar {
+            visibility: hidden;
+            /* Hidden by default. Visible on click */
+            min-width: 250px;
+            /* Set a default minimum width */
+            margin-left: -125px;
+            /* Divide value of min-width by 2 */
+            background-color: #333;
+            /* Black background color */
+            color: #fff;
+            /* White text color */
+            text-align: center;
+            /* Centered text */
+            border-radius: 2px;
+            /* Rounded borders */
+            padding: 16px;
+            /* Padding */
+            position: fixed;
+            /* Sit on top of the screen */
+            z-index: 1;
+            /* Add a z-index if needed */
+            left: 50%;
+            /* Center the snackbar */
+            bottom: 30px;
+            /* 30px from the bottom */
+        }
+
+        /* Show the snackbar when clicking on a button (class added with JavaScript) */
+        #snackbar.show {
+            visibility: visible;
+            /* Show the snackbar */
+            /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+  However, delay the fade out process for 2.5 seconds */
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        /* Animations to fade the snackbar in and out */
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+
+        body {
+            text-align: center;
+            background-color: rgb(249, 247, 238);
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            z-index: 0
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+
+        .jumbotron {
+            padding: 1%;
+            background-color: rgb(34, 71, 131);
+            height: 155px;
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 50px;
+            height: 50px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        .logo {
+            width: 153px !important;
+            height: 126px !important;
+            display: inline;
+            float: right;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        #logo-heading {
+            color: rgb(249, 247, 238);
+            float: left;
+
+            /*  padding-top: 24px;  */
+
+        }
+
+        h5 {
+            display: inline;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .logo {
+                width: 35%;
+            }
+
+            .row {
+                width: 100%;
+                padding-right: 15px;
+            }
+
+            #head-box {
+                margin-left: 0%;
+                margin-right: 0%;
+            }
+
+            #logo-heading {
+                color: rgb(249, 247, 238);
+                padding-top: 16px;
+            }
+
+            .logo {
+                width: 93px !important;
+                height: 75px !important;
+                margin-right: 55px;
+                display: inline;
+            }
+
+            h2 {
+                font-size: 22px;
+                float: left;
+            }
+
+            div.col {
+                padding: 0px;
+                margin: 0;
+            }
+
+            .jumbotron {
+                height: 90px;
+            }
+
+
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+    <div class="jumbotron text-center">
+        <div id="head-box" style="display: flex;">
+            <div>
+                <img src="logo.png" class="logo">
+            </div>
+            <br>
+            <div>
+                <h2 id="logo-heading">GGSIPU (NAAC ACCREDITED 'A' GRADE)<br>
+                    <h4 style="color:white;">Sector - 16C, Dwarka, New Delhi - 110078 (India)</h4>
+                    <h5 style="color:white;">A Web Portal For Examination Results</h5>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+
+
+        <b>ABOUT GURU GOBIND SINGH INDRAPRASTHA UNIVERSITY </b> <br> <br>
+        Guru Gobind Singh Indraprastha University has been established by Govt. of NCT of Delhi under the provisions of
+        Guru Gobind Singh Indraprastha University Act, 1998. The University is recognized by the University Grants
+        Commission (UGC), India under Section 2 (f) and 12 (b) of the UGC Act. The University was graded as "A" by the
+        National Assessment and Accreditation Council, Bangalore for the period 2013 to 2018.
+        <br>
+        It is an affiliating and teaching University which aims at facilitating and promoting studies, research and
+        extension work in emerging areas of higher education with focus on professional education, for example
+        engineering, technology, management studies, medicine, pharmacy, nursing, law, etc., and also to achieve
+        excellence in these and connected fields and other matters connected therewith or incidental thereto.
+        <br>
+        In order to serve the broad purpose for which the University is established, it set out its statements of
+        vision,
+        mission and Quality Policy.
+        <br> <br>
+
+
+
+        <b>ABOUT DR. AKHILESH DAS GUPTA INSTITUTE OF TECHNOLOGY AND MANAGEMENT</b> <br> <br>
+        Dr. Akhilesh Das Gupta Institute of Technology and Management, formerly known as Northern India Engineering
+        College(NIEC), New Delhi was established by BBDES, LUCKNOW in the year 2003. NIEC has an aesthetically designed
+        campus spread over approximately 9 acres of lush green environment at Shastri Park. The Campus comprises of five
+        interconnected blocks covering a built up area of approx. 3.0 Lac sq, ft. NIEC offers following Under Graduate
+        and
+        Post Graduate level full time Professional programs approved by AICTE in affiliation with Guru Gobind Singh
+        Indraprastha University (GGSIPU), Delhi.
+        <br> <br>
+
+
+
+
+        <b>ABOUT OUR TEAM</b> <br> <br>
+        <ul style="text-align:left;">
+            <li>Subhahu Jain (Developer) - <a href="https://www.linkedin.com/in/jainsubhahu/"><span
+                        class="label label-success">LinkedIn</span></a> &nbsp;
+                <a href="#"><span class="label label-success">GitHub</span></a> </li>
+            <li>Manan Mahajan (Designer) - <a href="https://www.linkedin.com/in/manan-mahajan-a02353154"><span
+                        class="label label-success">LinkedIn</span></a></li>
+        </ul>
+
+    </div>
+
+
+
+
+    <br> <br>
+
+
+    <div class="jumbotron" style="margin-top:10px;height:auto;margin-bottom:0;color:white;">
+        <b>DISCLAIMER FOR GGSIPU RESULTS </b> <br> <br>
+        If you require any more information or have any questions about our site's disclaimer, please feel free to
+        contact
+        us by email at <span class="badge badge-info" style="color:black;">admin@subhahu.tech</span>. All the information on this website -
+        <span class="badge badge-pill badge-info" style="color:black;">http://ipresults.ml/ </span>- is published in
+        good faith and for general information purpose only. GGSIPU Results does not make any warranties about the
+        completeness, reliability and accuracy of this information. Any action you take upon the information you find on
+        this website (GGSIPU Results), is strictly at your own risk. GGSIPU Results will not be liable for any losses
+        and/or damages in connection with the use of our website.
+        <br>
+        From our website, you can visit other websites by following hyperlinks to such external sites. While we strive
+        to
+        provide only quality links to useful and ethical websites, we have no control over the content and nature of
+        these
+        sites. These links to other websites do not imply a recommendation for all the content found on these sites.
+        Site
+        owners and content may change without notice and may occur before we have the opportunity to remove a link which
+        may have gone 'bad'.
+        <br>
+        Please be also aware that when you leave our website, other sites may have different privacy policies and terms
+        which are beyond our control. And be sure to check the Privacy Policies of these sites as well as their "Terms
+        of Service" before engaging in any business or uploading any information.
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="snackbar">Email Sent</div>
+
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
