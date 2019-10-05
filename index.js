@@ -1442,7 +1442,7 @@ function search() {
 
             table +=
                 `<br><div style="float: right;" ><label></label>
-                <span class="badge badge-pill badge-success" style="font-size:x-large;">Percentage : ${percentage}</span>&nbsp; &nbsp; &nbsp; &nbsp; </div>`;
+                <span class="badge badge-pill badge-success" style="font-size:x-large;">Percentage : ${percentage.toFixed(2)}</span>&nbsp; &nbsp; &nbsp; &nbsp; </div>`;
             table += `<br> 
                       <br>                       
                       <div id="emailbox-position">
