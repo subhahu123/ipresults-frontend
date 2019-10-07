@@ -1290,7 +1290,7 @@ function search() {
     var url = `https://vast-escarpment-73783.herokuapp.com/students/${batch.value}/${branch.value}/${college.value}/${semester.value}`;
     // var url = `http://127.0.0.1:8080/student/${semester.value}/${query.value}` ;
     console.log(url);
-    var html = `<input class="form-control" id="myInput" type="text" placeholder="Search.."><br><br>` ;
+    var html = `<br> <input class="form-control" id="myInput" type="text" placeholder="Search.."><br><br>` ;
     fetch(url)
         .then( data => data.json() )
         // .then( log => log[1684] )
