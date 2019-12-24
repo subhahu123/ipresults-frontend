@@ -7,6 +7,10 @@ var content
 
 function search() {
 
+    var overlay = document.querySelector('.rightbar-overlay') ;
+    overlay.style.display = 'block' ;
+    console.log(overlay.style.display) ;
+
     var collegecode = `{
   "101": {
       "college": "AMBEDKAR INSTITUTE OF ADVANCED COMMUNICATION TECHNOLOGIES & RESEARCH (FORMERLY AIT)"
@@ -1466,6 +1470,7 @@ function search() {
             content.innerHTML += table;
 
             content.style.display = "block";
+            overlay.style.display = 'none' ;
             document.querySelector('#container1').style.display = "none";
             console.log(data);
         })
