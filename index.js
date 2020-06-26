@@ -665,6 +665,54 @@ function search() {
 
 
     var subjectscodedata = `{
+    "27301":{
+      "papercode":"ETCS301",
+      "subject":"ALGORITHMS DESIGN AND ANALYSIS"
+   },
+   "98301":{
+      "papercode":"ETHS301",
+      "subject":"COMMUNICATION SKILLS FOR PROFESSIONALS"
+   },
+   "27303":{
+      "papercode":"ETCS303",
+      "subject":"SOFTWARE ENGINEERING"
+   },
+   "28303":{
+      "papercode":"ETEC303",
+      "subject":"DIGITAL COMMUNICATION"
+   },
+   "27307":{
+      "papercode":"ETCS307",
+      "subject":"JAVA PROGRAMMING"
+   },
+   "99311":{
+      "papercode":"ETMS311",
+      "subject":"INDUSTRIAL MANAGEMENT"
+   },
+   "27351":{
+      "papercode":"ETCS351",
+      "subject":"ALGORITHMS DESIGN AND ANALYSIS LAB"
+   },
+   "98351":{
+      "papercode":"ETHS351",
+      "subject":"COMMUNICATION SKILLS FOR PROFESSIONALS LAB"
+   },
+   "27353":{
+      "papercode":"ETCS353",
+      "subject":"SOFTWARE ENGINEERING LAB"
+   },
+   "27357":{
+      "papercode":"ETCS357",
+      "subject":"JAVA PROGRAMMING LAB"
+   },
+   "28357":{
+      "papercode":"ETEC357",
+      "subject":"DIGITAL COMMUNICATION LAB"
+   },
+   "27359":{
+      "papercode":"ETCS359",
+      "subject":"VIVA INDUSTRIAL TRAINING "
+   },
     "99201": {
         "papercode": "ETMA201",
         "subject": "APPLIED MATHEMATICS"
