@@ -665,6 +665,46 @@ function search() {
 
 
     var subjectscodedata = `{
+  "27302": {
+    "papercode": "ETCS302",
+    "subject": "COMPILER DESIGN"
+  },
+  "027304": {
+    "papercode": "ETCS304",
+    "subject": "OPERATING SYSTEMS"
+  },
+  "027306": {
+    "papercode": "ETCS306",
+    "subject": "COMPUTER NETWORKS"
+  },
+  "027308": {
+    "papercode": "ETCS308",
+    "subject": "WEB TECHNOLOGY"
+  },
+  "027310": {
+    "papercode": "ETCS310",
+    "subject": "ARTIFICIAL INTELLIGENCE"
+  },
+  "049310": {
+    "papercode": "ETEE310",
+    "subject": "MICROPROCESSOR AND MICROCONTROLLER"
+  },
+  "027352": {
+    "papercode": "ETCS352",
+    "subject": "OPERATING SYSTEMS"
+  },
+  "027354": {
+    "papercode": "ETCS354",
+    "subject": "COMPUTER NETWORKS LAB"
+  },
+  "027356": {
+    "papercode": "ETCS356",
+    "subject": "WEB TECHNOLOGY LAB"
+  },
+  "049358": {
+    "papercode": "ETEE358",
+    "subject": "MICROPROCESSOR AND MICROCONTROLLER LAB"
+  },
     "27301":{
       "papercode":"ETCS301",
       "subject":"ALGORITHMS DESIGN AND ANALYSIS"
